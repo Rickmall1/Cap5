@@ -1,23 +1,49 @@
 #include <stdio.h>
-#include <locale.h>
+#include <stdlib.h>
 #include <math.h>
 
-int main() {
-    setlocale(LC_ALL, "Portuguese");
+float main(float argc, char** argv) {
 
-    int numerador,expoente,denominador,total;
+    float termos, x, num = 0, den = 1, mult = 0;
 
-    printf("Digite o numerador: \n");
-    scanf("%d", &numerador);
+    printf("Digite o nº de termos: \n");
+    scanf("%f", &termos);
 
-   
-    for(expoente=2;expoente<=5;expoente++){
-        if((expoente%2==0)){
-            numerador = numerador*(-1);
+    printf("Digite um valor positivo para X: \n");
+    scanf("%f", &x);
+
+    float aux = 0, i = 0, iter = 0;
+    int expo;
+
+    for (aux = 1; aux <= termos; aux++) {
+
+        //Numerador
+        expo = aux + 1;
+        num = pow(x, expo);
+
+        if ((expo % 2 == 0)) {
+            num = num * (-1);
         }
-        total = pow(numerador,expoente);
-        printf("%d\n", total);
-    }
 
-    return 0;
+        //Denominador
+        den = den + iter;
+        float cont = 1;
+
+        for (float i = 1; i <= den; i++) {
+            cont = i*cont;
+        }
+
+        if ((den == 1)) {
+            iter = +1;
+        } else if ((den == 4)) {
+            iter = -1;
+        }
+
+        //Resultado
+        mult = mult + (num / cont);
+    }
+    printf("S = %.2f\n", mult);
+
+    return (EXIT_SUCCESS);
 }
+
