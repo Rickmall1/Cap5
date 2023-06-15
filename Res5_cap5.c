@@ -6,7 +6,7 @@ float main(float argc, char** argv) {
 
     float termos, x, num = 0, den = 1, mult = 0;
 
-    printf("Digite o nÂº de termos: \n");
+    printf("Digite o nº de termos: \n");
     scanf("%f", &termos);
 
     printf("Digite um valor positivo para X: \n");
