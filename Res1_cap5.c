@@ -1,26 +1,26 @@
 #include <stdio.h>
-#include <locale.h>
-#include <math.h>
 
 int main()
 {
-  setlocale(LC_ALL, "Portuguese");
-
-  float i = 0, sal = 0, percentual, novosal;
-
-  // Dados da questão
-  percentual = 1.5 / 100;
-  sal = 1000;
-  novosal = sal + (percentual * sal);
-
-  // Crescimento exponencial(vai dar um número ENORME)
-  for (i = 2007; i <= 2023; i++)
-  {
-    percentual = percentual * 2;
-    novosal = novosal + (percentual * novosal);
-  }
-
-  printf("Novo salário em 2023: %.2f", novosal);
-
-  return 0;
+    // Contratado em 2005
+    // Salario inicial 1.000,00 reais
+    // em 2007 +1,5% incrementado ao salÃ¡rio
+    // a partir de 2007 o incremento anual dobra a cada ano;
+    
+    float salario, incremento=1.5;
+    int ano = 2007;
+    
+    printf("Insira o valor:\n>");
+    scanf("%f", &salario);
+    
+    do{
+        printf("Ano: %d\n", ano);
+        printf("Salario: %.2f\n", salario);
+        printf("Incremento: %.1f%%\n", incremento);
+        salario += ((incremento*salario)/100);
+        incremento = incremento*2.0;
+        ano += 1;
+    }while(ano<=2024);
+    
+    return 0;
 }
