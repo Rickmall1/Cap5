@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int main()
+{
 
-int main() {
+	int sexo, aulas, codigo = 0;
+	float mediaFem = 0, mediaMasc = 0, contMasc = 0, contFem = 0;
 
-	int sexo,aulas,codigo=0;
-	float mediaFem=0, mediaMasc=0, contMasc=0, contFem=0;
-
-	while(1) {
+	while (1)
+	{
 
 		printf("\nInsira o codigo:\n>");
 		scanf("%d", &codigo);
-		if(codigo==99999) {
+		if (codigo == 99999)
+		{
 			break;
 		}
 
@@ -21,34 +23,37 @@ int main() {
 		printf("Insira o numero de aulas:\n>");
 		scanf("%d", &aulas);
 
-		aulas = aulas*30;
+		aulas = aulas * 30;
 
 		printf("\nCodigo: %d", codigo);
 		printf("\nSalario bruto: %.2f", (float)aulas);
 
-		if(sexo=1) {
-			aulas= aulas-(aulas*(1.0/10));
-			mediaMasc+=aulas;
+		if (sexo == 1)
+		{
+			aulas = aulas - (aulas * (1.0 / 10));
+			mediaMasc += aulas;
 			contMasc++;
 		}
-		else {
-			aulas= aulas-(aulas*(5.0/100));
-			mediaFem+=aulas;
+		else
+		{
+			aulas = aulas - (aulas * (5.0 / 100));
+			mediaFem += aulas;
 			contFem++;
 		}
 
-		printf("\nSalario liquido: %.2f",(float)aulas);
+		printf("\nSalario liquido: %.2f", (float)aulas);
 	}
 
 	printf("\nMedia dos salarios femininos e masculinos:");
-	if(contFem!=0)
-		printf("%.2f", mediaFem/contFem);
+	if (contFem != 0)
+		printf("\n%.2f", mediaFem / contFem);
 	else
+	{
 		printf("\nSem mulheres.");
+	}
 
-
-	if(contMasc!=0)
-		printf("\n%.2f", mediaMasc/contMasc);
+	if (contMasc != 0)
+		printf("\n%.2f", mediaMasc / contMasc);
 	else
 		printf("\nSem homens.");
 
@@ -56,4 +61,3 @@ int main() {
 
 	return (EXIT_SUCCESS);
 }
-
